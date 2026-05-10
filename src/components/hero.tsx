@@ -37,19 +37,24 @@ export default function Hero() {
           >
             VER CATÁLOGO →
           </a>
-          <a
+
+          {/* <a
             href="#personalizar"
             className="font-['AmberlySans'] font-bold text-[1rem] px-[2.2rem] py-[0.85rem] rounded-full border-[3px] cursor-pointer inline-flex items-center gap-2 transition-[transform,box-shadow] duration-150 uppercase tracking-[0.05em] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 bg-transparent text-blancoPrint border-blancoPrint shadow-[4px_4px_0_rgba(255,255,255,0.3)] hover:shadow-[6px_6px_0_rgba(255,255,255,0.3)]"
           >
             PERSONALIZAR LA MÍA
-          </a>
-        </div>
-      </div>
+          </a> */}
 
-      {/* Mascota */}
-      <div className="absolute right-[5%] bottom-0 w-[clamp(160px,10vw,280px)] z-2 animate-mascotFloat">
-        <Image src="/pinardo.svg" alt="Pinardo, mascota de Pin & Print" width={280} height={280} className="w-full h-auto" />
+        </div>
+
       </div>
+      <div className="flex">
+        <Image src="/Cara pinardo.png" alt="Cara Pinardo , mascota de Pin & Print" width={200} height={200} className="w-full translate-y-38"/>
+      </div>
+      {/* Mascota */}
+      {/*  <div className="absolute right-[5%] bottom-0 w-[clamp(160px,10vw,280px)] z-2 animate-mascotFloat">
+        <Image src="/pinardo.svg" alt="Pinardo, mascota de Pin & Print" width={280} height={280} className="w-full h-auto" />
+      </div> */}
 
     </section>
   )

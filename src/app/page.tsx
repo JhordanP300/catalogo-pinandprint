@@ -8,6 +8,7 @@ import Feature from "../components/feature";
 import Footer from "../components/footer";
 import Providers from "../components/providers";
 
+
 export default function Home() {
   return (
     <Providers>

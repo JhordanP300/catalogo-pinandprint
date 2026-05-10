@@ -15,7 +15,7 @@ export const products: Product[] = [
 	{
 		id: 1, name: "Jujutsu", category: "anime",
 		tag: "new", tagLabel: "Nuevo",
-		price: 65000, originalPrice: null,
+		price: 90000, originalPrice: null,
 		desc: "La camisa oficial de la mascota. Pinardo en todo su esplendor con diseño exclusivo de alta calidad.",
 		colors: ["#a772f2", "#eaacf2", "#1a1a1a"],
 		img: "https://res.cloudinary.com/dopa1ol1d/image/upload/q_auto/f_auto/c_pad,w_512,h_384/v1776208576/JU-05_dkzckh.png"
@@ -23,7 +23,7 @@ export const products: Product[] = [
 	{
 		id: 2, name: "Blob Retro", category: "anime",
 		tag: "hot", tagLabel: "🔥 Más vendido",
-		price: 58000, originalPrice: 72000,
+		price: 90000, originalPrice: null,
 		desc: "Estética retro-pop con formas orgánicas en la paleta de colores Pin & Print. Vibe 70s.",
 		colors: ["#f2d95c", "#f24c3d", "#29733c"],
 		img: "https://res.cloudinary.com/dopa1ol1d/image/upload/q_auto/f_auto/c_pad,w_512,h_384/v1776208575/JU-06_xyu30e.png"
@@ -31,7 +31,7 @@ export const products: Product[] = [
 	{
 		id: 3, name: "Minimal Verde", category: "anime",
 		tag: null, tagLabel: null,
-		price: 52000, originalPrice: null,
+		price: 90000, originalPrice: null,
 		desc: "Líneas simples, máximo impacto. Bordado minimalista en tono verde bosque.",
 		colors: ["#29733c", "#fafaf5"],
 		img: "https://res.cloudinary.com/dopa1ol1d/image/upload/q_auto/f_auto/c_pad,w_512,h_384/v1776208575/JU-07_cdswpt.png"
@@ -39,18 +39,18 @@ export const products: Product[] = [
 	{
 		id: 4, name: "Galaxia Lila", category: "anime",
 		tag: "limited", tagLabel: "⭐ Limitada",
-		price: 78000, originalPrice: null,
+		price: 90000, originalPrice: null,
 		desc: "Ilustración de galaxia con puntos estelares en tonos lilas, morados y blancos. Solo 30 unidades.",
 		colors: ["#a772f2", "#eaacf2", "#1a1a1a"],
 		img: "https://res.cloudinary.com/dopa1ol1d/image/upload/q_auto/f_auto/c_pad,w_512,h_384/v1776208192/JUJUTSU_omsfga.png"
 	},
-	/* {
+	{
 		id: 5, name: "Acid Yellow", category: "otros",
 		tag: "hot", tagLabel: "🔥 Popular",
 		price: 60000, originalPrice: null,
 		desc: "Camisa oversize con estampado tipográfico en amarillo ácido. Perfecta para el verano.",
 		colors: ["#f2d95c", "#1a1a1a"],
-		img: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=600&q=80"
+		img: "https://res.cloudinary.com/dopa1ol1d/image/upload/q_auto/f_auto/v1777435811/004_msjwia.png"
 	},
 	{
 		id: 6, name: "Tú la diseñas", category: "anime",
@@ -58,7 +58,7 @@ export const products: Product[] = [
 		price: 75000, originalPrice: null,
 		desc: "Camisa 100% personalizada. Envíanos tu diseño y nosotros lo llevamos al estampado.",
 		colors: ["#eaacf2", "#f2d95c", "#a772f2", "#29733c"],
-		img: "https://images.unsplash.com/photo-1562157873-818bc0726f68?w=600&q=80"
+		img: "https://res.cloudinary.com/dopa1ol1d/image/upload/q_auto/f_auto/v1777435811/002_nogrtj.png"
 	},
 	{
 		id: 7, name: "Monster Club", category: "bandas",
@@ -66,7 +66,7 @@ export const products: Product[] = [
 		price: 82000, originalPrice: 95000,
 		desc: "Colección inspirada en Pinardo y sus amigos monstruo. Ilustraciones hechas a mano.",
 		colors: ["#a772f2", "#f24c3d", "#1a1a1a"],
-		img: "https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=600&q=80"
+		img: "https://res.cloudinary.com/dopa1ol1d/image/upload/q_auto/f_auto/v1777435811/001_uzpar1.png"
 	},
 	{
 		id: 8, name: "Geo Rojo", category: "series y peliculas",
@@ -74,9 +74,9 @@ export const products: Product[] = [
 		price: 55000, originalPrice: 65000,
 		desc: "Formas geométricas abstractas en rojo coral. Diseño clean con mucho carácter.",
 		colors: ["#f24c3d", "#fafaf5"],
-		img: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&q=80"
+		img: "https://res.cloudinary.com/dopa1ol1d/image/upload/q_auto/f_auto/v1777435814/003_wkvxty.png"
 	},
-	{
+	/* {
 		id: 9, name: "Type Chaos", category: "otros",
 		tag: "new", tagLabel: "Nuevo",
 		price: 62000, originalPrice: null,

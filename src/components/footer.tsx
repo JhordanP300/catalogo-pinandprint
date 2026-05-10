@@ -1,27 +1,19 @@
 "use client"
-
+import Image from "next/image"
 import { useState, type FormEvent } from "react"
-
+import { FaInstagram, FaWhatsapp, FaTiktok } from "react-icons/fa6"
 const socialLinks = [
-	{ icon: "📸", href: "https://www.instagram.com/pinandprint.co", label: "Instagram" },
-	{ icon: "🎵", href: "https://www.tiktok.com/@pinandprint", label: "TikTok" },
-	{ icon: "💬", href: "https://wa.me/3136458875", label: "WhatsApp" },
+	{ icon: FaInstagram, href: "https://www.instagram.com/pinandprint.co", label: "Instagram" },
+	{ icon: FaTiktok, href: "https://www.tiktok.com/@pinandprint", label: "TikTok" },
+	{ icon: FaWhatsapp, href: "https://wa.me/3136458875", label: "WhatsApp" },
 ]
 
 export default function Footer() {
 	const [email, setEmail] = useState("")
-	const [subscribed, setSubscribed] = useState(false)
-
-	function handleSubscribe(e: FormEvent) {
-		e.preventDefault()
-		if (!email.includes("@")) return
-		setSubscribed(true)
-		setEmail("")
-	}
-
+	
 	return (
-		<footer className="bg-verdePrint border-t-[3px] border-negroPrint pt-12 px-8 pb-8 text-blancoPrint">
-			<div className="max-w-300 mx-auto grid grid-cols-[2fr_1fr_1fr_1.5fr] gap-12">
+		<footer className="bg-verdePrint border-t-[3px] border-negroPrint pt-12 px-8 pb-8 text-blancoPrint flex flex-col">
+			<div className="max-w-300 mx-auto grid grid-cols-[2fr_1fr_1fr_1.5fr] gap-12 flex items-center">
 
 				{/* Columna marca */}
 				<div>
@@ -41,9 +33,9 @@ export default function Footer() {
 								key={label}
 								href={href}
 								aria-label={label}
-								className="w-10 h-10 border-2 border-white/40 rounded-full flex items-center justify-center text-[1rem] text-blancoPrint no-underline transition-[background,border-color,color] duration-200 hover:bg-amarilloPrint hover:border-amarilloPrint hover:text-negroPrint"
+								className="w-10 h-10 border-2 border-white/40 rounded-full flex items-center justify-center text-[1rem] text-blancoPrint no-underline transition-[background,border-color,color] duration-200 hover:bg-amarilloPrint  hover:border-naranjaPrint hover:text-negroPrint"
 							>
-								{icon}
+								{icon({ size: 18 })}
 							</a>
 						))}
 					</div>
@@ -55,7 +47,7 @@ export default function Footer() {
 						Catálogo
 					</h4>
 					<ul className="list-none">
-						{["Gráfico", "Minimalista", "Retro", "Personalizado", "Edición Limitada"].map(item => (
+						{["Anime", "Gamers", "Series y peliculas", "Bandas"].map(item => (
 							<li key={item} className="mb-2">
 								<a href="#catalogo" className="text-white/70 no-underline font-['AmberlySans'] text-[0.88rem] transition-colors duration-200 hover:text-amarilloPrint">
 									{item}
@@ -66,58 +58,23 @@ export default function Footer() {
 				</div>
 
 				{/* Columna info */}
-				<div>
+				{/* <div>
 					<h4 className="font-['AmberlySans'] font-bold text-[0.8rem] uppercase tracking-[0.12em] text-amarilloPrint mb-4">
-						Info
+						Mas información
 					</h4>
-					<ul className="list-none">
-						{["Sobre nosotros", "Cómo funciona", "Envíos", "Devoluciones", "Contacto"].map(item => (
-							<li key={item} className="mb-2">
-								<a href="#" className="text-white/70 no-underline font-['AmberlySans'] text-[0.88rem] transition-colors duration-200 hover:text-amarilloPrint">
-									{item}
-								</a>
-							</li>
-						))}
-					</ul>
-				</div>
+					<p className="text-white/80 no-underline font-['AmberlySans'] text-[0.98rem]">
+						Tambien hacemos estampación de tog bag 
+						Si tienes negocio y  pin.print25@gmail.com
+					</p>
+				</div> */}
 
-				{/* Columna newsletter */}
-				<div>
-					<h4 className="font-['AmberlySans'] font-bold text-[0.8rem] uppercase tracking-[0.12em] text-amarilloPrint mb-4">
-						Newsletter
-					</h4>
-					{subscribed ? (
-						<p className="font-['AmberlySans'] font-bold text-[0.9rem] text-amarilloPrint">
-							✦ ¡Gracias por suscribirte!
-						</p>
-					) : (
-						<form onSubmit={handleSubscribe}>
-							<label htmlFor="newsletter-email" className="sr-only">
-								Tu correo electrónico
-							</label>
-							<input
-								id="newsletter-email"
-								type="email"
-								value={email}
-								onChange={e => setEmail(e.target.value)}
-								placeholder="tu@correo.com"
-								required
-								className="w-full px-4 py-[0.7rem] border-2 border-white/30 rounded-lg bg-white/10 text-blancoPrint font-['AmberlySans'] text-[0.85rem] mb-3 transition-[border-color] duration-200 outline-none focus:border-amarilloPrint"
-							/>
-							<button
-								type="submit"
-								className="w-full font-['AmberlySans'] font-bold text-[0.85rem] uppercase tracking-[0.05em] py-[0.7rem] bg-amarilloPrint text-negroPrint border-2 border-negroPrint rounded-lg cursor-pointer shadow-[3px_3px_0_var(--negroPrint)] transition-[transform,box-shadow] duration-150 hover:-translate-x-px hover:-translate-y-px hover:shadow-[4px_4px_0_var(--negroPrint)]"
-							>
-								Suscribirme ✦
-							</button>
-						</form>
-					)}
+				 {/* Mascota */}
+				<div className="flex justify-center items-center animate-mascotFloat">
+					<Image src="/pinardo.svg" alt="Pinardo, mascota de Pin & Print" width={100} height={100} />
 				</div>
-
-				</div>
-
-				{/* Footer bottom */}
-				<div className="max-w-300 mx-auto mt-8 pt-6 border-t border-white/20 flex items-center justify-between flex-wrap gap-4">
+			</div>
+			{/* Footer bottom */}
+				<div className="w-full mt-8 pt-6 border-t border-white/20 flex flex-col items-center justify-center gap-2 text-center">
 					<p className="font-['AmberlySans'] text-[0.8rem] text-white/60">
 						© {new Date().getFullYear()} Pin & Print — Todos los derechos reservados.
 					</p>
@@ -125,7 +82,6 @@ export default function Footer() {
 						Hecho con 💜 en Medellín Colombia.
 					</p>
 				</div>
-
 		</footer>
 	)
 }
