@@ -12,8 +12,8 @@ export default function Footer() {
 	const [email, setEmail] = useState("")
 	
 	return (
-		<footer className="bg-verdePrint border-t-[3px] border-negroPrint pt-12 px-8 pb-8 text-blancoPrint flex flex-col">
-			<div className="max-w-300 mx-auto grid grid-cols-[2fr_1fr_1fr_1.5fr] gap-12 flex items-center">
+		<footer className="bg-verdePrint border-t-[3px] border-negroPrint pt-10 pb-8 px-4 md:px-8 text-blancoPrint flex flex-col">
+			<div className="max-w-300 mx-auto grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr_1.5fr] gap-6 md:gap-12 items-center">
 
 				{/* Columna marca */}
 				<div>
