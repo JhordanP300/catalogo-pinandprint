@@ -18,16 +18,28 @@ export default function Navbar() {
 				</span>
 			</a>
 
-			{/* Botón hamburguesa */}
-			<button
-				className="md:hidden flex flex-col justify-center items-center w-10 h-10 ml-2"
-				aria-label="Abrir menú"
-				onClick={() => setOpen(o => !o)}
-			>
-				<span className={`block w-6 h-0.5 bg-blancoPrint mb-1 transition-all duration-200 ${open ? 'rotate-45 translate-y-1.5' : ''}`}></span>
-				<span className={`block w-6 h-0.5 bg-blancoPrint mb-1 transition-all duration-200 ${open ? 'opacity-0' : ''}`}></span>
-				<span className={`block w-6 h-0.5 bg-blancoPrint transition-all duration-200 ${open ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
-			</button>
+			{/* Botón hamburguesa y botón X */}
+			{!open && (
+				<button
+					className="md:hidden flex flex-col justify-center items-center w-10 h-10 ml-2"
+					aria-label="Abrir menú"
+					onClick={() => setOpen(true)}
+				>
+					<span className="block w-6 h-0.5 bg-blancoPrint mb-1"></span>
+					<span className="block w-6 h-0.5 bg-blancoPrint mb-1"></span>
+					<span className="block w-6 h-0.5 bg-blancoPrint"></span>
+				</button>
+			)}
+			{open && (
+				<button
+					className="fixed top-4 right-4 z-[100] md:hidden flex items-center justify-center w-10 h-10 bg-negroPrint rounded-full shadow-lg"
+					aria-label="Cerrar menú"
+					onClick={() => setOpen(false)}
+				>
+					<span className="block w-6 h-0.5 bg-blancoPrint rotate-45 absolute"></span>
+					<span className="block w-6 h-0.5 bg-blancoPrint -rotate-45 absolute"></span>
+				</button>
+			)}
 
 			{/* NAVBAR */}
 			<nav

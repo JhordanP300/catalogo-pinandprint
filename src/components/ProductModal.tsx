@@ -7,9 +7,27 @@ import { formatPrice } from "../lib/utils"
 
 
 export default function ProductModal() {
-	const { modal, openModal, selectedSize, setSelectedSize, addToCart } = useApp()
+	const { modal, openModal, selectedSize, setSelectedSize, addToCart, showToast } = useApp()
 	const returnFocusRef = useRef<HTMLElement | null>(null)
 	const firstFocusRef = useRef<HTMLButtonElement>(null)
+
+	const sendWhatsApp = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    e.stopPropagation()
+	
+
+    if (!selectedSize) {
+        showToast("⚠️ Selecciona una talla primero")
+        return
+    }
+    if (!modal) return
+
+    const message = `Hola, me interesa esta camisa:\n\n*${modal.name}*\nTalla: ${selectedSize}\nPrecio: $${modal.price.toLocaleString('es-CO')}\n\n¿Disponible?`
+    const whatsappUrl = `https://wa.me/3013117505?text=${encodeURIComponent(message)}`
+
+    // ✅ Usar window.open en lugar de window.location.href
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer')
+}
 
 	// Guardar foco anterior y hacer autofocus al primer elemento
 	useEffect(() => {
@@ -116,12 +134,18 @@ export default function ProductModal() {
 						{formatPrice(modal.price)}
 					</span>
 
-					<div className="flex gap-3 mt-2">
+					<div className="flex gap-3 mt-2 flex-col sm:flex-row">
 						<button
 							onClick={addToCart}
 							className="flex-1 font-['AmberlySans'] font-bold text-[0.9rem] uppercase tracking-[0.05em] py-3 bg-negroPrint text-blancoPrint rounded-full shadow-[4px_4px_0_var(--verdePrint)] hover:bg-verdePrint hover:shadow-[4px_4px_0_var(--negroPrint)] transition-all duration-150"
 						>
 							+ Agregar al carrito
+						</button>
+						<button type="button"
+							onClick={sendWhatsApp}
+							className="flex-1 font-['AmberlySans'] font-bold text-[0.9rem] uppercase tracking-[0.05em] py-3 bg-verdePrint text-blancoPrint rounded-full shadow-[4px_4px_0_var(--naranjaPrint)] hover:bg-naranjaPrint hover:shadow-[4px_4px_0_var(--verdePrint)] transition-all duration-150"
+						>
+							🛒 Pedir ahora
 						</button>
 						<button
 							onClick={() => openModal(null)}
